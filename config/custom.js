@@ -16,8 +16,8 @@ module.exports.custom = {
   * (these may also be overridden in config/env/production.js)               *
   *                                                                          *
   ***************************************************************************/
-  // mailgunDomain: 'transactional-mail.example.com',
-  // mailgunApiKey: 'key-testkeyb183848139913858e8abd9a3',
+  riotApiDomain: 'api.riotgames.com',
+  riotApiKey: 'bc391236-7615-4266-93e1-ac2141254538',
   // stripeSecret: 'sk_test_Zzd814nldl91104qor5911gjald',
 
 };

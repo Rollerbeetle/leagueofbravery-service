@@ -10,7 +10,10 @@
 
 module.exports.routes = {
 
-
+  'get /': 'DefaultController.get',
+  'get /version': 'DefaultController.getVersion',
+  'get /champion': 'ChampionController.getAll',
+  'get /champion/:championId': 'ChampionController.getById'
 
   /***************************************************************************
   *                                                                          *

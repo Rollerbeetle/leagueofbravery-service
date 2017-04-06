@@ -19,6 +19,7 @@
  * For more information see:
  *   http://sailsjs.com/anatomy/app.js
  */
+ require('typescript-require');
 
 
 // Ensure we're in the project directory, so cwd-relative paths work as expected

@@ -36,6 +36,14 @@
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   },
 
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+        "jsx": true
+    }
+  },
+
   "rules": {
     "callback-return":              [2, ["callback", "cb", "next", "done", "proceed"]],
     "camelcase":                    [1, {"properties": "always"}],

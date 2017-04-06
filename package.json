@@ -5,17 +5,20 @@
   "description": "a Sails application",
   "keywords": [],
   "dependencies": {
+    "async": "2.0.1",
+    "lodash": "3.10.1",
+    "request": "^2.81.0",
     "sails": "^1.0.0-32",
     "sails-hook-orm": "^2.0.0-0",
     "sails-hook-sockets": "^1.0.1",
-    "lodash": "3.10.1",
-    "async": "2.0.1"
+    "typescript-require": "^0.2.9-1"
   },
   "devDependencies": {
     "eslint": "3.5.0"
   },
   "scripts": {
-    "start": "NODE_ENV=production node app.js",
+    "start": "node app.js",
+    "start-prod": "NODE_ENV=production npm start",
     "test": "npm run lint && npm run custom-tests && echo 'Done.'",
     "lint": "node ./node_modules/eslint/bin/eslint . --max-warnings=0 && echo '✔  Your code looks good.'",
     "custom-tests": "echo \"(No other custom tests yet.)\" && echo",

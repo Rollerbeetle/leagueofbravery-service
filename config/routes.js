@@ -19,9 +19,12 @@ module.exports.routes = {
   'get /static/champions': 'StaticController.getChampions',
   'get /static/champions/:championId': 'StaticController.getChampionById',
 
-  'get /summoner/:id': 'SummonerController.getById',
+  'get /summoner/:summonerId': 'SummonerController.getById',
   'get /summoner/by-name/:name': 'SummonerController.getByName',
-  'get /summoner/by-account/:id': 'SummonerController.getByAccount',
+  'get /summoner/by-account/:accountId': 'SummonerController.getByAccount',
+
+  'get /masteries/:summonerId': 'MasteryController.getAll',
+  'get /masteries/:summonerId/total': 'MasteryController.getScores',
 
   /***************************************************************************
   *                                                                          *

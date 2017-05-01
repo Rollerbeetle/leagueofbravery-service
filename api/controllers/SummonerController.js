@@ -9,8 +9,10 @@ module.exports = {
 
   getById: function (req, res) {
     let region = req.param('region');
-    let id = req.param('id');
-
+    let id = req.param('summonerId');
+    if (!id) {
+      return res.serverError('missing summonerId');
+    }
 
     let url = sails.helpers.generateUrl({endpoint: `/lol/summoner/v3/summoners/${id}`, platform: region}).execSync();
 
@@ -37,8 +39,10 @@ module.exports = {
 
   getByAccount: function (req, res) {
     let region = req.param('region');
-    let id = req.param('id');
-
+    let id = req.param('accountId');
+    if (!id) {
+      return res.serverError('missing accountId');
+    }
 
     let url = sails.helpers.generateUrl({endpoint: `/lol/summoner/v3/summoners/by-account/${id}`, platform: region}).execSync();
 

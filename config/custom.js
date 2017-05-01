@@ -33,6 +33,7 @@ module.exports.custom = {
       ru: 'ru',
       pbe: 'pbe1',
       global: 'global'
-    }
+    },
+    version: 'v3'
   }
 };

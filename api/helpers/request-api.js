@@ -21,13 +21,20 @@ module.exports = {
       type: 'string',
       description: 'url for api resource',
       required: true,
+    },
+    qs: {
+      type: 'json',
+      description: 'addtional qs params for endpoint'
     }
   },
 
 
   fn: function (inputs, exits) {
+    let qs = inputs.qs || {};
+    qs['api_key'] = sails.config.custom.riotApiKey;
     request({
-      url: `${inputs.url}?api_key=${sails.config.custom.riotApiKey}`,
+      url: `${inputs.url}`,
+      qs: qs,
       json: true
     }, (err, res, body) => {
       if (err) {

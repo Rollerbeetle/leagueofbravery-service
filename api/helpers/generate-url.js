@@ -19,17 +19,17 @@ module.exports = {
       description: 'endpoint path',
       required: true
     },
-    region: {
+    platform: {
       type: 'string',
-      description: 'region name',
-      defaultsTo: 'euw',
+      description: 'platform name',
+      defaultsTo: 'euw1',
       required: false
     }
   },
 
 
   fn: function (inputs, exits) {
-    var url = `https://${inputs.region}.${sails.config.custom.riotApiDomain}${inputs.endpoint}`;
+    var url = `https://${inputs.platform}.${sails.config.custom.riotApiDomain}${inputs.endpoint}`;
     // All done.
     return exits.success(url);
 

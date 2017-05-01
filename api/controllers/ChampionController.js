@@ -28,8 +28,6 @@ module.exports = {
   getById: function (req, res) {
     let id = req.param('championId');
     let region = req.param('region');
-
-
     if (!id) {
       return res.serverError('missing championId');
     }

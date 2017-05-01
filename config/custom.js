@@ -16,8 +16,23 @@ module.exports.custom = {
   * (these may also be overridden in config/env/production.js)               *
   *                                                                          *
   ***************************************************************************/
-  riotApiDomain: 'api.riotgames.com',
-  riotApiKey: 'bc391236-7615-4266-93e1-ac2141254538',
-  // stripeSecret: 'sk_test_Zzd814nldl91104qor5911gjald',
-
+  riotApi: {
+    domain:'api.riotgames.com',
+    key: 'bc391236-7615-4266-93e1-ac2141254538',
+    platforms: {
+      default: 'euw1',
+      br: 'br1',
+      eune: 'eun1',
+      jp: 'jp1',
+      kr: 'kr',
+      lan: 'la1',
+      las: 'la2',
+      na: 'na1',
+      oce: 'oc1',
+      tr: 'tr1',
+      ru: 'ru',
+      pbe: 'pbe1',
+      global: 'global'
+    }
+  }
 };

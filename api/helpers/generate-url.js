@@ -9,7 +9,7 @@ module.exports = {
 
   friendlyName: 'Generate Url',
 
-  description: 'Generates API url for endpoint and region',
+  description: 'Generates API url for endpoint and platform',
 
   sync: true,
 
@@ -22,14 +22,16 @@ module.exports = {
     platform: {
       type: 'string',
       description: 'platform name',
-      defaultsTo: 'euw1',
+      defaultsTo: 'default',
       required: false
     }
   },
 
 
   fn: function (inputs, exits) {
-    var url = `https://${inputs.platform}.${sails.config.custom.riotApiDomain}${inputs.endpoint}`;
+    let platform = sails.config.custom.riotApi.platforms[inputs.platform];
+
+    var url = `https://${platform}.${sails.config.custom.riotApi.domain}${inputs.endpoint}`;
     // All done.
     return exits.success(url);
 

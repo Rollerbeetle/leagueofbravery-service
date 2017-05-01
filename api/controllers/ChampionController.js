@@ -11,8 +11,9 @@ module.exports = {
    * `ChampionController.getAll()`
    */
   getAll: function (req, res) {
+    let region = req.param('region');
 
-    let url = sails.helpers.generateUrl({endpoint: `/lol/platform/v3/champions`}).execSync();
+    let url = sails.helpers.generateUrl({endpoint: `/lol/platform/v3/champions`, platform: region}).execSync();
 
     sails.helpers.requestApi({url}).exec({
       error: (err) => res.serverError(err),
@@ -26,11 +27,13 @@ module.exports = {
    */
   getById: function (req, res) {
     let id = req.param('championId');
+    let region = req.param('region');
+
 
     if (!id) {
       return res.serverError('missing championId');
     }
-    let url = sails.helpers.generateUrl({endpoint: `/lol/platform/v3/champions/${id}`}).execSync();
+    let url = sails.helpers.generateUrl({endpoint: `/lol/platform/v3/champions/${id}`, platform: region}).execSync();
 
     sails.helpers.requestApi({url}).exec({
       error: (err) => res.serverError(err),

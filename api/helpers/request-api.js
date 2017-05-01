@@ -31,7 +31,7 @@ module.exports = {
 
   fn: function (inputs, exits) {
     let qs = inputs.qs || {};
-    qs['api_key'] = sails.config.custom.riotApiKey;
+    qs['api_key'] = sails.config.custom.riotApi.key;
     request({
       url: `${inputs.url}`,
       qs: qs,

@@ -17,7 +17,11 @@ module.exports.routes = {
   'get /champions/:championId': 'ChampionController.getById',
 
   'get /static/champions': 'StaticController.getChampions',
-  'get /static/champions/:championId': 'StaticController.getChampionById'
+  'get /static/champions/:championId': 'StaticController.getChampionById',
+
+  'get /summoner/:id': 'SummonerController.getById',
+  'get /summoner/by-name/:name': 'SummonerController.getByName',
+  'get /summoner/by-account/:id': 'SummonerController.getByAccount',
 
   /***************************************************************************
   *                                                                          *

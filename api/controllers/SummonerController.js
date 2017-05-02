@@ -18,7 +18,7 @@ module.exports = {
 
     sails.helpers.requestApi({url}).exec({
       error: (err) => res.serverError(err),
-      success: (data) => res.json(data)
+      success: (data) => sails.helpers.handleApiError({res, data}).execSync(),
     });
 
   },
@@ -32,7 +32,7 @@ module.exports = {
 
     sails.helpers.requestApi({url}).exec({
       error: (err) => res.serverError(err),
-      success: (data) => res.json(data)
+      success: (data) => sails.helpers.handleApiError({res, data}).execSync(),
     });
 
   },
@@ -48,7 +48,7 @@ module.exports = {
 
     sails.helpers.requestApi({url}).exec({
       error: (err) => res.serverError(err),
-      success: (data) => res.json(data)
+      success: (data) => sails.helpers.handleApiError({res, data}).execSync()
     });
 
   },

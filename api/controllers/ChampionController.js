@@ -17,7 +17,7 @@ module.exports = {
 
     sails.helpers.requestApi({url}).exec({
       error: (err) => res.serverError(err),
-      success: (data) => res.json(data)
+      success: (data) => sails.helpers.handleApiError({res, data}).execSync()
     });
 
   },
@@ -27,6 +27,7 @@ module.exports = {
    */
   getById: function (req, res) {
     let id = req.param('championId');
+
     let region = req.param('region');
     if (!id) {
       return res.serverError('missing championId');
@@ -35,7 +36,7 @@ module.exports = {
 
     sails.helpers.requestApi({url}).exec({
       error: (err) => res.serverError(err),
-      success: (data) => res.json(data)
+      success: (data) => sails.helpers.handleApiError({res, data}).execSync()
     });
 
   }

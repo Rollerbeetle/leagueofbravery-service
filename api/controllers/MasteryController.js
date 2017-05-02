@@ -11,7 +11,6 @@ module.exports = {
   getAll: function (req, res) {
     let region = req.param('region');
     let id = req.param('summonerId');
-
     if (!id) {
       return res.serverError('missing summonerId');
     }

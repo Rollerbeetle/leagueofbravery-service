@@ -23,6 +23,7 @@ module.exports.custom = {
       default: 'euw1',
       br: 'br1',
       eune: 'eun1',
+      euw: 'euw1',
       jp: 'jp1',
       kr: 'kr',
       lan: 'la1',

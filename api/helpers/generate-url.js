@@ -29,7 +29,7 @@ module.exports = {
 
 
   fn: function (inputs, exits) {
-    let platform = sails.config.custom.riotApi.platforms[inputs.platform];
+    let platform = sails.config.custom.riotApi.platforms[inputs.platform.toLowerCase()] || sails.config.custom.riotApi.platforms['default'] ;
 
     var url = `https://${platform}.${sails.config.custom.riotApi.domain}${inputs.endpoint}`;
     // All done.

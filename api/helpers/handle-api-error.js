@@ -35,8 +35,13 @@ module.exports = {
 
   fn: function (inputs, exits) {
 
-    if (inputs.data.status && inputs.data.status.status_code !== 200) {
-      return exits.success(inputs.res.status(inputs.data.status.status_code).send(inputs.data.status));
+    let status = inputs.data.status;
+    if (status && status.status_code !== 200) {
+      let err = {
+        code: status.status_code,
+        message: status.message
+      };
+      return exits.success(inputs.res.status(424).send(err));
     }
 
     // All done.
